@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 // Map slugs to their dynamic imports
 const caseStudyImports = {
   'e-commerce-platform': () => import('@/components/case-studies/e-commerce-platform'),
+  'sreenarayanaguru-open-university' : () => import('@/components/case-studies/sreenarayanaguru-open-university')
   // 'mobile-banking-app': () => import('@/components/case-studies/mobile-banking-app'),
   // 'saas-dashboard': () => import('@/components/case-studies/default'), // Fallback
   // 'health-fitness-app': () => import('@/components/case-studies/default'),

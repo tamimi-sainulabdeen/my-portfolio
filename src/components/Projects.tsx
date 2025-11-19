@@ -31,6 +31,18 @@ const projects: Project[] = [
     caseStudyUrl: "/projects/e-commerce-platform",
   },
   {
+    slug: "sreenarayanaguru-open-university",
+    title: "Sreenarayanaguru Open University (SGOU)",
+    description:
+      "A state open university in Kerala that provides flexible higher education opportunities.",
+    image:
+      "/images/sgou_1.webp",
+    category: "Web",
+    tags: ["Bootstrap", "MDB", "JavaScript", "CSS"],
+    liveUrl: "https://erp.sgou.ac.in/login-candidate",
+    caseStudyUrl: "/projects/sreenarayanaguru-open-university",
+  },
+  {
     slug: "mobile-banking-app",
     title: "Mobile Banking App",
     description:
