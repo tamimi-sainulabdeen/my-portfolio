@@ -9,7 +9,9 @@ import {
 
 import { 
   Users, MessageCircle, Clock, Target, 
-  Lightbulb, Search, Zap, BookOpen, Code2
+  Lightbulb, Search, Zap, BookOpen, Code2,
+  Palette, Cpu, Workflow, Bug, Smartphone, Globe,
+  Heart, Brain, Calendar, Sparkles, TrendingUp
 } from "lucide-react";
 
 const skillsData = [
@@ -49,7 +51,51 @@ const skillsData = [
       { name: "Postman", icon: SiPostman, color: "text-orange-500" },
     ],
   },
-  
+];
+
+const otherSkillsData = [
+  {
+    icon: Workflow,
+    title: "State Management",
+    description: "Managing application state efficiently"
+  },
+  {
+    icon: Smartphone,
+    title: "Responsive Design",
+    description: "Creating mobile-first experiences"
+  },
+  {
+    icon: Users,
+    title: "User Flows",
+    description: "Designing intuitive user journeys"
+  },
+  {
+    icon: Cpu,
+    title: "API Integration",
+    description: "Connecting frontend to backend services"
+  },
+  {
+    icon: Bug,
+    title: "Debugging",
+    description: "Identifying and fixing issues"
+  },
+  {
+    icon: Globe,
+    title: "Cross Browser",
+    description: "Ensuring compatibility across browsers"
+  },
+];
+
+const softSkillsData = [
+  { icon: MessageCircle, title: "Communication" },
+  { icon: Target, title: "Problem Solving" },
+  { icon: Clock, title: "Time Management" },
+  { icon: Sparkles, title: "Creativity" },
+  { icon: Heart, title: "Teamwork" },
+  { icon: Brain, title: "Adaptability" },
+  { icon: Lightbulb, title: "Innovation" },
+  { icon: Search, title: "Attention to Detail" },
+  { icon: TrendingUp, title: "Continuous Learning" },
 ];
 
 export function Skills() {
@@ -104,9 +150,9 @@ export function Skills() {
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: skillIndex * 0.05 + categoryIndex * 0.1 }}
+                        transition={{ duration: 0.4, delay: skillIndex * 0.05 +  categoryIndex * 0.1 }}
                         whileHover={{ scale: 1.05, y: -2 }}
-                        className="flex flex-col items-center p-4 rounded-xl bg-background/80 backdrop-blur-sm border border-border/50 hover:border-primary/40 transition-all duration-300 group-hover:bg-background/90"
+                        className="flex flex-col items-center p-4 rounded-xl bg-background/80 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300 group-hover:bg-background/90"
                       >
                         <skill.icon className={`w-8 h-8 mb-3 ${skill.color} group-hover:scale-110 transition-transform duration-300`} />
                         <span className="text-sm font-medium text-foreground text-center leading-tight">
@@ -121,66 +167,83 @@ export function Skills() {
           ))}
         </div>
 
-        {/* Additional Skills */}
+        {/* Other Skills - Feature Cards Design */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16 text-center"
-         >
-          <h3 className="text-lg font-semibold text-foreground mb-5">
-           Other Skills and Practices
-          </h3>
-          <div className="flex flex-wrap justify-center gap-3">
-             {[
-               "State Management", "Responsive Design", "User Flows",
-               "API Integration and Testing", "Debugging", "Cross Browser Compatibility",
-               "Component Based Development", "Routing & Navigation"
-             
-            ].map((skill, index) => (
-              <motion.span
-                key={skill}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+          className="mt-20"
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-semibold text-foreground mb-3">
+              Development Practices
+            </h3>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {otherSkillsData.map((skill, index) => (
+              <motion.div
+                key={skill.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                whileHover={{ scale: 1.05 }}
-                className="px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 text-foreground text-sm hover:from-primary/20 hover:to-secondary/20 transition-all duration-300"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="group p-6 rounded-xl border border-ring/40 dark:border-ring/20 hover:border-primary/40 dark:hover:border-primary/50 transition-all duration-300"
               >
-                {skill}
-              </motion.span>
+                <div className="flex items-start space-x-4">
+                  <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                    <skill.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-foreground mb-2">
+                      {skill.title}
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      {skill.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
-          {/* Additional Skills */}
+
+        {/* Soft Skills - Minimal Grid Design */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16 text-center"
-         >
-          <h3 className="text-lg font-semibold text-foreground mb-5">
-           Soft Skills
-          </h3>
-          <div className="flex flex-wrap justify-center gap-3">
-             {[
-               "Effective Communication","Problem Solving", "Time Management", "Creativity & Innovation",
-               "Teamwork & Collaboration", "Attention to Detail", "Adaptability", "Flexibility", "Continuous Learning"
-             
-            ].map((skill, index) => (
-              <motion.span
-                key={skill}
-                initial={{ opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-20"
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-semibold text-foreground mb-3">
+              Soft Skills
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-7xl mx-auto">
+            {softSkillsData.map((skill, index) => (
+              <motion.div
+                key={skill.title}
+                initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                whileHover={{ scale: 1.05 }}
-                className="px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 text-foreground text-sm hover:from-primary/20 hover:to-secondary/20 transition-all duration-300"
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                className="group"
               >
-                {skill}
-              </motion.span>
+                <div className="flex flex-col items-center p-4 rounded-lg bg-background/60 border border-secondary/5 dark:border border-secondary/30 hover:border-secondary/50 dark:hover:border-secondary/70 hover:bg-background/80 transition-all duration-300 backdrop-blur-sm">
+                  <div className="p-2 rounded-full bg-secondary/10 group-hover:bg-secondary/20 transition-colors duration-300 mb-2">
+                    <skill.icon className="w-5 h-5 text-secondary" />
+                  </div>
+                  <span className="text-sm font-medium text-foreground text-center leading-tight">
+                    {skill.title}
+                  </span>
+                </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>

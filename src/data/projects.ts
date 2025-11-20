@@ -30,6 +30,21 @@ export const projects: Project[] = [
     role: "Front-End Developer"
   },
   {
+    slug: "sreenarayanaguru-open-university",
+    title: "Sreenarayanaguru Open University (SGOU)",
+    description:
+      "A full-featured online shopping platform with seamless checkout, inventory management, and personalized recommendations.",
+    image:
+      "https://images.unsplash.com/photo-1627634771121-fa3db5779f60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXZlbG9wbWVudCUyMHByb2plY3R8ZW58MXx8fHwxNzYyNzUxNTA5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    category: "Web",
+    tags: ["Next.js", "TypeScript", "Stripe", "Tailwind"],
+    liveUrl: "#",
+    caseStudyUrl: "/projects/sreenarayanaguru-open-university",
+    featured: true,
+    year: "2024",
+    role: "Front-End Developer"
+  },
+  {
     slug: "mobile-banking-app",
     title: "Mobile Banking App",
     description:

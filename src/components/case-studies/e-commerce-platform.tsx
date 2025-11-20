@@ -438,16 +438,16 @@ export default function EcommerceCaseStudy() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 border border-green-200 relative overflow-hidden">
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-green-500/5 rounded-full translate-y-16 -translate-x-16"></div>
+            <div className="bg-gradient-to-br from-primary/50 to-secondary/50 rounded-3xl p-8 border border-primary relative overflow-hidden">
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary/50 rounded-full translate-y-16 -translate-x-16"></div>
               
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center shadow-lg">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/50 to-secondary/50 flex items-center justify-center shadow-lg">
                   <Lightbulb className="w-8 h-8 text-white" />
                 </div>
                 <div>
                   <h2 className="text-3xl font-bold text-slate-800">The Solution</h2>
-                  <div className="w-12 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mt-2"></div>
+                  <div className="w-12 h-1 bg-gradient-to-br from-primary/50 to-secondary/50 rounded-full mt-2"></div>
                 </div>
               </div>
               
@@ -460,14 +460,14 @@ export default function EcommerceCaseStudy() {
                 {caseStudyData.features.map((feature, index) => (
                   <motion.div
                     key={feature}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-white/50 backdrop-blur-sm border border-green-100 hover:border-green-300 transition-all duration-300"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-white/50 backdrop-blur-sm border border-ring hover:border-border transition-all duration-300"
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     whileHover={{ x: 5 }}
                   >
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                     <span className="text-slate-700 font-medium">{feature}</span>
                   </motion.div>
                 ))}
